@@ -1,7 +1,6 @@
 import dotenv from "dotenv";
 import type { Request, Response } from "express";
 import twilio from "twilio";
-import { ParticipantInstance } from "twilio/lib/rest/conversations/v1/conversation/participant";
 
 dotenv.config();
 const { ACCOUNT_SID, AUTH_TOKEN } = process.env;
