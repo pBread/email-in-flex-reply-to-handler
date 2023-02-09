@@ -58,3 +58,7 @@ npm run start;
 Once you start your tunnel, copy the URL from the terminal. You will need to assign it to the Conversations Post Event webhook.
 
 ### Update the Conversations Service
+
+Add the nGrok URL to the Conversation's post-event webhook and subscribe to the `onParticipantAdded` post-webhook event.
+
+![conversation config](./assets/conversations-config.png)
