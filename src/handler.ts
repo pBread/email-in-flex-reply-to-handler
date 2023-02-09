@@ -8,10 +8,7 @@ const { ACCOUNT_SID, AUTH_TOKEN } = process.env;
 const client = twilio(ACCOUNT_SID, AUTH_TOKEN);
 
 export async function handler(req: Request, res: Response) {
-  const end = () => {
-    console.log("end");
-    res.send();
-  };
+  const end = () => res.send();
 
   // check to make sure the event type is "onParticipantAdd"
   if (req.body.EventType !== "onParticipantAdded") return end();
@@ -22,7 +19,6 @@ export async function handler(req: Request, res: Response) {
 
   // check if name contains reply-to
   const replyTo = getReplyToFromName(body["MessagingBinding.Name"]);
-  console.log("replyTo\n", replyTo);
   if (!replyTo) return end();
 
   // Remove Previous & Add New Participant
