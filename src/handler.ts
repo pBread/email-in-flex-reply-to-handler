@@ -53,6 +53,8 @@ type PostOnParticipantAdd = {
 };
 
 function getReplyToFromName(name: string): string[] | null {
+  // if (name === "YOUR NAME") return ["your-reply-to-email@example.com"];
+
   const re = /\b[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}\b/g;
   const emails = name.match(re);
   return emails;
